@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Home page</title>
+        <link rel="stylesheet" href="Page_view.css" />
+    </head>
+    <body id="container">
+        <header id="header">
+            <nav>
+                <button id="nav_closed" onclick="menu_open()">
+                    &#9776; Menu</button>
+                <button id="nav_opened" onclick="menu_close()">
+                    &times; Close</button>
+            </nav>
+            <h1>Power Search</h1>
+            <menu id="menu">
+                <ul>
+                    <li class="current"><a href="Home page.html">Home</a></li>
+                    <li><a href="People search.html">People search</a></li>
+                    <li><a href="Vehicle search.html">Vehicle search</a></li>
+                    <li><a href="Add a vehicle.html">Add a vehicle</a></li>
+                </ul>
+            </menu>
+            <a href="Home page.html">
+                <image id="power_search" src="/Images/PowerSearch.png" alt="Power Search png"></image></a>
+        </header>
+        <main id="main">  <!-- homepage main content-->
+            <frameOne id="frameOne">
+                <h2><u>Welcome to <strong>POWER SEARCH</strong></u></h2>
+                <p>This is a page where you can search the information of the drivers and vehicles, either by looking up with driver's name or the vehicle directly.</p>
+            </frameOne>
+            <frameTwo id="frameTwo" style="background-color: aliceblue;">
+                <instruction id="instruction">
+                    <div class="peopleSearch_intro">
+                        <a href="People search.html">
+                            <image class="peopleSearchIcon" src="/Images/PeopleSearch.png" alt="People search"></image></a>
+                        <p><strong>People Search</strong> can be used to find the driver's information such as <em>Address, DOB (Date Of Birth), License Number and License's Expiry Date</em> just by entering details - their <u>name</u> or <u>driving license number</u>. 
+                            <br>&#8594; <a href="People search.html">Go to this page!</a></p>
+                    </div>
+                    <div class="vehicleSearch_intro">
+                        <p><strong>Vehicle Search</strong> have the similar functions but it will return <em>vehicle's model, owner's name, license number</em> etc. You can look up these information by entering the <u>vehicle's registration (plate) number</u>. 
+                            <br>&#8594; <a href="Vehicle search.html">Go to this page!</a></p>
+                        <a href="Vehicle search.html">
+                            <image class="vehicleSearchIcon" src="/Images/VehicleSearch.png" alt="Vehicle search"></image></a>
+                    </div>
+                    <div class="AddAVehicle_intro">
+                        <a href="Add a vehicle.html">
+                            <image class="addAVehicleIcon" src="/Images/AddVehicle.png" alt="Add a vehicle"></image></a>
+                        <p>You can <strong>Add a Vehicle</strong> by providing the <u>registration (plate) number</u>, <u>make</u>, <u>model</u>, and <u>the colour</u> of the vehicle, and its <u>owner</u> (If owner was not added in the system, you have to provide owner's information too). 
+                            <br> &#8594; <a href="Add a vehicle.html">Go to this page!</a></p>
+                    </div>
+                </instruction>
+            </frameTwo>
+        </main>
+        <aside id="sidebar"> <!-- homepage sidebar--> 
+            <p>You are currently in:</p>
+            <image id="sidebar_image" src="/Images/Homepage.png" alt="homepage png"></image>
+            <p style="text-align: center;"><u>Home page</u></p>
+        </aside>
+        <footer>
+            <ul> <!-- disclaimer: all the links here will link to my personal account -->
+                <li><a href="https://www.facebook.com/ong.ty.3956/">
+                    <image src="/Images/facebookIcon.png" alt="facebook" height="20px"></image></a></li>
+                <li><a href="https://www.instagram.com/tengyi_2709/">
+                    <image src="/Images/instagramIcon.png" alt="instagram" height="20px"></image></a></li>
+                <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&pp=ygUXbmV2ZXIgZ29ubmEgZ2l2ZSB5b3UgdXA%3D">
+                    <image src="/Images/youtubeIcon.png" alt="youtube" height="20px"></image></a></li>
+                <li><a href="https://twitter.com/tyong2709">
+                    <image src="/Images/twitterIcon.png" alt="twitter" height="20px"></image></a></li>
+            </ul>
+            <p>Copyright @ 2024 tyong2709@gmail.com</p>
+            <p>Publisher: Teng Ong</p>
+        </footer>
+    </body>
+</html>
