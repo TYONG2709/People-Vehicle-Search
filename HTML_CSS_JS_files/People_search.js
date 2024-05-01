@@ -41,7 +41,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const resultHeading = document.getElementById("result_heading");
     const emptyDisplay = document.getElementById("empty_result");
     const numResults = document.getElementById("num_results");
-    const restartButton = document.getElementById("again");
 
     // added autocomplete attribute to inputs
     nameInput.autocomplete = "on";
@@ -73,10 +72,11 @@ document.addEventListener("DOMContentLoaded", () => {
             // access data in promise object by using .then()
             promise.then(((data) => {
                 if(data.length > 0){ // successful
-                    errorMessage.innerHTML = "Search successful - press 'New Search' to restart";
+                    errorMessage.innerHTML = "Search successful - feel free to start new search or refresh the page";
                     errorMessage.style.color = "green";
-                    numResults.innerHTML = data.length + " Results";
+                    numResults.innerHTML = data.length + " Results | Last search - driver name: " + nameInput.value;
                     // add result
+                    allResults.innerHTML = "";
                     for(let i = 0; i < data.length; i++){
                         const result = document.createElement('div');
                         result.className = 'result';
@@ -88,21 +88,18 @@ document.addEventListener("DOMContentLoaded", () => {
                                             + "License's Expiry Date: " + data[i].ExpiryDate;
                         allResults.appendChild(result);
                     }
-                    submitButton.style.display = "none";
-                    // make inputs to readable only, disable editing
-                    nameInput.readOnly = true;
-                    licenseInput.readOnly = true;
-                    restartButton.style.display = "inline-block";
+                    // make inputs to empty
+                    nameInput.value = "";
+                    licenseInput.value = "";
                 }
                 else{ // if no result found
-                    errorMessage.innerHTML = "No result found - press 'New Search' to restart";
+                    errorMessage.innerHTML = "No result found - feel free to start new search or refresh the page";
                     errorMessage.style.color = "blue";
-                    numResults.innerHTML = data.length + " Results";
-                    submitButton.style.display = "none";
-                    // make inputs to readable only, disable editing
-                    nameInput.readOnly = true;
-                    licenseInput.readOnly = true;
-                    restartButton.style.display = "inline-block";
+                    numResults.innerHTML = data.length + " Results | Last search - driver name: " + nameInput.value;
+                    allResults.innerHTML = "";
+                    // make inputs to empty
+                    nameInput.value = "";
+                    licenseInput.value = "";
                 }
             }))
         }
@@ -117,10 +114,11 @@ document.addEventListener("DOMContentLoaded", () => {
             const promise = fetchData("LicenseNumber", licenseInput.value);
             promise.then(((data) => {
                 if(data.length > 0){ // successful
-                    errorMessage.innerHTML = "Search successful - press 'New Search' to restart";
+                    errorMessage.innerHTML = "Search successful - feel free to start new search or refresh the page";
                     errorMessage.style.color = "green";
-                    numResults.innerHTML = data.length + " Results";
+                    numResults.innerHTML = data.length + " Results | Last search - driving license number: " + licenseInput.value;
                     // add result
+                    allResults.innerHTML = "";
                     for(let i = 0; i < data.length; i++){
                         const result = document.createElement('div');
                         result.className = 'result';
@@ -132,21 +130,18 @@ document.addEventListener("DOMContentLoaded", () => {
                                             + "License Expiry Date: " + data[i].ExpiryDate;
                         allResults.appendChild(result);
                     }
-                    submitButton.style.display = "none";
-                    // make inputs to readable only, disable editing
-                    nameInput.readOnly = true;
-                    licenseInput.readOnly = true;
-                    restartButton.style.display = "inline-block";
+                    // make inputs to empty
+                    nameInput.value = "";
+                    licenseInput.value = "";
                 }
                 else{ // if no result found
-                    errorMessage.innerHTML = "No result found - press 'New Search' to restart";
+                    errorMessage.innerHTML = "No result found - feel free to start new search or refresh the page";
                     errorMessage.style.color = "blue";
-                    numResults.innerHTML = data.length + " Results";
-                    submitButton.style.display = "none";
-                    // make inputs to readable only, disable editing
-                    nameInput.readOnly = true;
-                    licenseInput.readOnly = true;
-                    restartButton.style.display = "inline-block";
+                    numResults.innerHTML = data.length + " Results | Last search - driving license number: " + licenseInput.value;
+                    allResults.innerHTML = "";
+                    // make inputs to empty
+                    nameInput.value = "";
+                    licenseInput.value = "";
                 }
             }))
         }

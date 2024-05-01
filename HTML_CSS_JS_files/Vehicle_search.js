@@ -31,7 +31,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const allResults = document.getElementById("results");
     const emptyDisplay = document.getElementById("empty_result");
     const numResults = document.getElementById("num_results");
-    const restartButton = document.getElementById("again");
 
     // added autocomplete attribute to input
     plateNumber.autocomplete = "on";
@@ -56,9 +55,10 @@ document.addEventListener("DOMContentLoaded", () => {
             // access data in promise object by using .then()
             promise.then((data) => {
                 if(data.length > 0){ // successful
-                    errorMessage.innerHTML = "Search successful - press 'New Search' to restart";
+                    errorMessage.innerHTML = "Search successful - feel free to start a new search or refresh the page";
                     errorMessage.style.color = "green";
-                    numResults.innerHTML = data.length + " Results";
+                    numResults.innerHTML = data.length + " Results | Last search - plate number: " + plateNumber.value;
+                    allResults.innerHTML = "";
                     // add result
                     for(let i = 0; i < data.length; i++){
                         const result = document.createElement('div');
@@ -80,20 +80,17 @@ document.addEventListener("DOMContentLoaded", () => {
                         }
                         allResults.appendChild(result);
                     }
-                    submitButton.style.display = "none";
-                    // make input to readable only, disable editing
-                    plateNumber.readOnly = true;
-                    restartButton.style.display = "inline-block";
+                    // make input to empty
+                    plateNumber.value = "";
                 }
                 else{ // if no result found
-                    errorMessage.innerHTML = "No result found - press 'New Search' to restart";
+                    errorMessage.innerHTML = "No result found - feel free to start a new search or refresh the page";
                     errorMessage.style.color = "blue";
                     resultHeading.style.display = "block";
-                    numResults.innerHTML = data.length + " Results";
-                    submitButton.style.display = "none";
-                    // make input to readable only, disable editing
-                    plateNumber.readOnly = true;
-                    restartButton.style.display = "inline-block";
+                    numResults.innerHTML = data.length + " Results | Last search - plate number: " + plateNumber.value;
+                    allResults.innerHTML = "";
+                    // make input to empty
+                    plateNumber.value = "";
                 }
             })
         }

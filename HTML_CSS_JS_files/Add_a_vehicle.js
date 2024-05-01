@@ -97,9 +97,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const errorExpire = document.getElementById("error_expire");
     // message displays
     const errorMessage = document.getElementById("message");
+    const lastAddedBox = document.getElementById("last_add");
+    const lastAddedInfo = document.getElementById("added_info");
     // buttons
     const addButton = document.getElementById("added");
-    const restartButton = document.getElementById("again");
 
     // added autocomplete attribute to the inputs
     regoInput.autocomplete = "on";
@@ -213,26 +214,52 @@ document.addEventListener("DOMContentLoaded", () => {
                     const personID = Number.parseInt(personidInput.value);
                     addOwner(personID, nameInput.value, addressInput.value, dobInput.value, licenseInput.value, expireInput.value,
                             regoInput.value, makeInput.value, modelInput.value, colourInput.value, personID);
-                    // make inputs to readable only, disable editing
-                    personidInput.readOnly = true;
-                    nameInput.readOnly = true;
-                    addressInput.readOnly = true;
-                    dobInput.readOnly = true;
-                    licenseInput.readOnly = true;
-                    expireInput.readOnly = true;
+                    // add last added box
+                    const add2 = document.createElement("div");
+                    add2.innerHTML = "<strong>Owner</strong>" + "<br />"
+                                    + "Person ID: " + personidInput.value + "<br />"
+                                    + "Name: " + nameInput.value + "<br />"
+                                    + "Address: " + addressInput.value + "<br />"
+                                    + "Date of Birth (DOB): " + dobInput.value + "<br />"
+                                    + "Driving License Number: " + licenseInput.value + "<br />"
+                                    + "License Expiry Date: " + expireInput.value;
+                    add2.style.gridRow = "2";
+                    add2.style.border = "1px solid black";
+                    // make inputs to empty
+                    personidInput.value = "";
+                    nameInput.value = "";
+                    addressInput.value = "";
+                    dobInput.value = "";
+                    licenseInput.value = "";
+                    expireInput.value = "";
                     ownerStatus.innerHTML = "Owner added successfully - adding vehicle right now...";
                     ownerStatus.style.color = "green";
+                    ownersInfo.style.display = "none";
+                    addButton.innerHTML = "Add vehicle";
                     // add vehicle automatically afterwards
-                    errorMessage.innerHTML = "Vehicle added successfully - press 'New Vehicle' to add a new vehicle";
+                    errorMessage.innerHTML = "Vehicle added successfully - feel free to add another new vehicle or refresh the page now";
                     errorMessage.style.color = "green";
-                    addButton.style.display = "none";
-                    // make inputs to readable only, disable editing
-                    regoInput.readOnly = true;
-                    makeInput.readOnly = true;
-                    modelInput.readOnly = true;
-                    colourInput.readOnly = true;
-                    ownerInput.readOnly = true;
-                    restartButton.style.display = "inline-block";
+                    // add last added box
+                    const add1 = document.createElement("div");
+                    add1.innerHTML = "<strong>Vehicle</strong>" + "<br />"
+                                    + "Registration (plate) number: " + regoInput.value + "<br />"
+                                    + "Make: " + makeInput.value + "<br />"
+                                    + "Model: " + modelInput.value + "<br />"
+                                    + "Colour: " + colourInput.value + "<br />"
+                                    + "Owner (full name): " + ownerInput.value;
+                    add1.style.gridRow = "1";
+                    add1.style.border = "1px solid black";
+                    // make inputs to empty
+                    regoInput.value = "";
+                    makeInput.value = "";
+                    modelInput.value = "";
+                    colourInput.value = "";
+                    ownerInput.value = "";
+                    // update "last added" box
+                    lastAddedBox.style.display = "block";
+                    lastAddedInfo.innerHTML = "";
+                    lastAddedInfo.appendChild(add1);
+                    lastAddedInfo.appendChild(add2);
                 }
             }
             else{ // when add owner form didn't appear on user page
@@ -257,16 +284,27 @@ document.addEventListener("DOMContentLoaded", () => {
                         ownerStatus.style.innerHTML = "";
                         const ownerID = Number.parseInt(data.PersonID);
                         addVehicle(regoInput.value, makeInput.value, modelInput.value, colourInput.value, ownerID);
-                        errorMessage.innerHTML = "Vehicle added successfully - press 'New Vehicle' to add a new vehicle";
+                        errorMessage.innerHTML = "Vehicle added successfully - feel free to add another new vehicle or refresh the page now";
                         errorMessage.style.color = "green";
-                        addButton.style.display = "none";
-                        // make inputs to readable only, disable editing
-                        regoInput.readOnly = true;
-                        makeInput.readOnly = true;
-                        modelInput.readOnly = true;
-                        colourInput.readOnly = true;
-                        ownerInput.readOnly = true;
-                        restartButton.style.display = "inline-block";
+                        // add last added box
+                        const add1 = document.createElement("div");
+                        add1.innerHTML = "<strong>Vehicle</strong>" + "<br />"
+                                        + "Registration (plate) number: " + regoInput.value + "<br />"
+                                        + "Make: " + makeInput.value + "<br />"
+                                        + "Model: " + modelInput.value + "<br />"
+                                        + "Colour: " + colourInput.value + "<br />"
+                                        + "Owner (full name): " + ownerInput.value;
+                        add1.style.gridRow = "1 / 3";
+                        add1.style.border = "1px solid black";
+                        // make inputs to empty
+                        regoInput.value = "";
+                        makeInput.value = "";
+                        modelInput.value = "";
+                        colourInput.value = "";
+                        ownerInput.value = "";
+                        // update "last added" box
+                        lastAddedBox.style.display = "block";
+                        lastAddedInfo.appendChild(add1);
                     }
                 })
             }

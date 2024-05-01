@@ -67,7 +67,10 @@
                 'Vehicle added successfully' (Green), 'Error' (red) -->
                 <!-- error message - 'Empty input - please fill in details in required field' -->
                 <button id="added">Add vehicle</button>
-                <button id="again" onclick="window.location.reload()" style="display: none;">New Vehicle</button>
+                <div id="last_add" style="display: none;">
+                    <p style="font-size: 13px;"><strong><u>Last added</u></strong></p>
+                    <div id="added_info"></div>
+                </div>
             </div>
         </main>
         <aside id="sidebar"> <!-- add a vehicle page sidebar -->

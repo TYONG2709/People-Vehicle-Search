@@ -293,6 +293,25 @@ main{
     border-color: grey;
     background-color: whitesmoke;
 }
+#last_add{
+    display: block;
+    padding: 10px;
+    margin: 10px;
+    border-style: double;
+    border-color: grey;
+    background-color: white;
+}
+#added_info{
+    display: grid;
+    text-align: left;
+    font-weight: bold;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    padding: 10px;
+    margin: 10px;
+    gap: 5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 /* ~footer for all pages~ */
@@ -624,6 +643,25 @@ footer ul > li{
         border-style: dashed;
         border-color: grey;
         background-color: whitesmoke;
+    }
+    #last_add{
+        display: block;
+        padding: 10px;
+        margin: 10px;
+        border-style: double;
+        border-color: grey;
+        background-color: white;
+    }
+    #added_info{
+        display: grid;
+        text-align: left;
+        font-weight: bold;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        padding: 10px;
+        margin: 10px;
+        gap: 5px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
     /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
