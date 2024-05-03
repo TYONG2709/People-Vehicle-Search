@@ -36,7 +36,7 @@ header h1{
 menu{
     display: block;
 }
-/* flex style for menu bar for all pages*/
+/* flex style for menu bar for all pages */
 menu ul{
     display: flex;
     flex-direction: row;

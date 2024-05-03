@@ -1,6 +1,5 @@
 // initializing
-import { createClient } from
-    "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
+import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
 
 // connect my supabase
 const supabase = createClient('https://ucvynbtjdkujbfjkspox.supabase.co',
