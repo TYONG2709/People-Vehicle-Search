@@ -9,7 +9,7 @@
 ### About Power Search
 *Power Search is a webpage to allow user (in this case probably road transport officer) to have a fast search of the people and respective vehicle. This front end page is connected to database with all the information of `People` and `Vehicles`.*
 ### Power Search Webpage (click the link below!)
-**[Power Search](/HTML_CSS_JS_files/Home page.html)**
+**[Power Search](/html_css_js_files/home_page.html)**
 
 ## Details
 | | |
@@ -23,10 +23,10 @@
 ### Front End 
 | Implementations | Files |
 | --------------- | ----- |
-| **HTML** | <ul><li>[People Search page](./HTML_CSS_JS_files/People%20search.html)</li><li>[Vehical Search page](./HTML_CSS_JS_files/Vehicle%20search.html)</li><li>[Add a Vehicle page](./HTML_CSS_JS_files/Add%20a%20vehicle.html)</li><li>Extra: [Home page](./HTML_CSS_JS_files/Home%20page.html)</li></ul> |
-| **CSS** | [Page View (all pages should have the same css)](./HTML_CSS_JS_files/Page_view.css) |
-| **JavaScript** | **Module files** <ul><li>[People Search js](./HTML_CSS_JS_files/People_search.js)</li><li>[Vehicle Search js](./HTML_CSS_JS_files/Vehicle_search.js)</li><li>[Add a Vehicle js](./HTML_CSS_JS_files/Add_a_vehicle.js)</li></ul> **Test Files (testing with Playwright)** <ul><li>[CW Requirements test spec (the sample file)](./HTML_CSS_JS_files/coursework-sample.spec.js)</li></ul> |
+| **HTML** | <ul><li>[People Search page](./html_css_js_files/people_search.html)</li><li>[Vehical Search page](./html_css_js_files/vehicle_search.html)</li><li>[Add a Vehicle page](./html_css_js_files/add_a_vehicle.html)</li><li>Extra: [Home page](./html_css_js_files/home_page.html)</li></ul> |
+| **CSS** | [Page View (all pages should have the same css)](./html_css_js_files/page_view.css) |
+| **JavaScript** | **Module files** <ul><li>[People Search js](./html_css_js_files/people_search.js)</li><li>[Vehicle Search js](./html_css_js_files/vehicle_search.js)</li><li>[Add a Vehicle js](./html_css_js_files/add_a_vehicle.js)</li></ul> **Test Files (testing with Playwright)** <ul><li>[CW Requirements test spec (the sample file)](./html_css_js_files/coursework-sample.spec.js)</li><li>[Additional Requirements test spec (created by me)](./html_css_js_files/additional_tests.spec.js)</li></ul> |
 ### Back End
 | Database | Files |
 | -------- | --------------- |
-| <image src="Images/supabase.png" alt="Supabase logo" height="35" />  <br> **(online <em>PostgreSQL</em> database)** | [Original files to be added to Supabase](./Original_Database) |
+| <image src="Images/supabase.png" alt="Supabase logo" height="35" />  <br> **(online <em>PostgreSQL</em> database)** | [Original files to be added to Supabase](./original_database) |

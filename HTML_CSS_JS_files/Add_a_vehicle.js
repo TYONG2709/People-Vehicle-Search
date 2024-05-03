@@ -35,6 +35,7 @@ export async function addVehicle(rego, make, model, colour, ownerID){
                                             OwnerID: ownerID })
                                 .select();
     console.log(data);
+    return data;
 }
 
 /**
@@ -61,9 +62,10 @@ export async function addOwner(personid, name, address, dob, license, expire, re
                                             LicenseNumber: license,
                                             ExpiryDate: expire })
                                 .select();
+    console.log(data);
     // add vehicle automatically afterwards
     addVehicle(rego, make, model, colour, ownerID);
-    console.log(data);
+    return data;
 }
 
 // DOMContentLoaded - event fires only after the html doc has completely loaded / parsed and DOM tree is built
@@ -212,54 +214,56 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
                 else if(!error_owner){ // if all inputs are filled
                     const personID = Number.parseInt(personidInput.value);
-                    addOwner(personID, nameInput.value, addressInput.value, dobInput.value, licenseInput.value, expireInput.value,
+                    const promise = addOwner(personID, nameInput.value, addressInput.value, dobInput.value, licenseInput.value, expireInput.value,
                             regoInput.value, makeInput.value, modelInput.value, colourInput.value, personID);
-                    // add last added box
-                    const add2 = document.createElement("div");
-                    add2.innerHTML = "<strong>Owner</strong>" + "<br />"
-                                    + "Person ID: " + personidInput.value + "<br />"
-                                    + "Name: " + nameInput.value + "<br />"
-                                    + "Address: " + addressInput.value + "<br />"
-                                    + "Date of Birth (DOB): " + dobInput.value + "<br />"
-                                    + "Driving License Number: " + licenseInput.value + "<br />"
-                                    + "License Expiry Date: " + expireInput.value;
-                    add2.style.gridRow = "2";
-                    add2.style.border = "1px solid black";
-                    // make inputs to empty
-                    personidInput.value = "";
-                    nameInput.value = "";
-                    addressInput.value = "";
-                    dobInput.value = "";
-                    licenseInput.value = "";
-                    expireInput.value = "";
-                    ownerStatus.innerHTML = "Owner added successfully - adding vehicle right now...";
-                    ownerStatus.style.color = "green";
-                    ownersInfo.style.display = "none";
-                    addButton.innerHTML = "Add vehicle";
-                    // add vehicle automatically afterwards
-                    errorMessage.innerHTML = "Vehicle added successfully - feel free to add another new vehicle or refresh the page now";
-                    errorMessage.style.color = "green";
-                    // add last added box
-                    const add1 = document.createElement("div");
-                    add1.innerHTML = "<strong>Vehicle</strong>" + "<br />"
-                                    + "Registration (plate) number: " + regoInput.value + "<br />"
-                                    + "Make: " + makeInput.value + "<br />"
-                                    + "Model: " + modelInput.value + "<br />"
-                                    + "Colour: " + colourInput.value + "<br />"
-                                    + "Owner (full name): " + ownerInput.value;
-                    add1.style.gridRow = "1";
-                    add1.style.border = "1px solid black";
-                    // make inputs to empty
-                    regoInput.value = "";
-                    makeInput.value = "";
-                    modelInput.value = "";
-                    colourInput.value = "";
-                    ownerInput.value = "";
-                    // update "last added" box
-                    lastAddedBox.style.display = "block";
-                    lastAddedInfo.innerHTML = "";
-                    lastAddedInfo.appendChild(add1);
-                    lastAddedInfo.appendChild(add2);
+                    promise.then((data) => {
+                        // add last added box
+                        const add2 = document.createElement("div");
+                        add2.innerHTML = "<strong>Owner</strong>" + "<br />"
+                                        + "Person ID: " + personidInput.value + "<br />"
+                                        + "Name: " + nameInput.value + "<br />"
+                                        + "Address: " + addressInput.value + "<br />"
+                                        + "Date of Birth (DOB): " + dobInput.value + "<br />"
+                                        + "Driving License Number: " + licenseInput.value + "<br />"
+                                        + "License Expiry Date: " + expireInput.value;
+                        add2.style.gridRow = "2";
+                        add2.style.border = "1px solid black";
+                        // make inputs to empty
+                        personidInput.value = "";
+                        nameInput.value = "";
+                        addressInput.value = "";
+                        dobInput.value = "";
+                        licenseInput.value = "";
+                        expireInput.value = "";
+                        ownerStatus.innerHTML = "Owner added successfully - adding vehicle right now...";
+                        ownerStatus.style.color = "green";
+                        ownersInfo.style.display = "none";
+                        addButton.innerHTML = "Add vehicle";
+                        // add vehicle automatically afterwards
+                        errorMessage.innerHTML = "Vehicle added successfully - feel free to add another new vehicle or refresh the page now";
+                        errorMessage.style.color = "green";
+                        // add last added box
+                        const add1 = document.createElement("div");
+                        add1.innerHTML = "<strong>Vehicle</strong>" + "<br />"
+                                        + "Registration (plate) number: " + regoInput.value + "<br />"
+                                        + "Make: " + makeInput.value + "<br />"
+                                        + "Model: " + modelInput.value + "<br />"
+                                        + "Colour: " + colourInput.value + "<br />"
+                                        + "Owner (full name): " + ownerInput.value;
+                        add1.style.gridRow = "1";
+                        add1.style.border = "1px solid black";
+                        // make inputs to empty
+                        regoInput.value = "";
+                        makeInput.value = "";
+                        modelInput.value = "";
+                        colourInput.value = "";
+                        ownerInput.value = "";
+                        // update "last added" box
+                        lastAddedBox.style.display = "block";
+                        lastAddedInfo.innerHTML = "";
+                        lastAddedInfo.appendChild(add1);
+                        lastAddedInfo.appendChild(add2);
+                    });
                 }
             }
             else{ // when add owner form didn't appear on user page
@@ -283,28 +287,30 @@ document.addEventListener("DOMContentLoaded", () => {
                     else{ // if owner exist in table
                         ownerStatus.style.innerHTML = "";
                         const ownerID = Number.parseInt(data.PersonID);
-                        addVehicle(regoInput.value, makeInput.value, modelInput.value, colourInput.value, ownerID);
-                        errorMessage.innerHTML = "Vehicle added successfully - feel free to add another new vehicle or refresh the page now";
-                        errorMessage.style.color = "green";
-                        // add last added box
-                        const add1 = document.createElement("div");
-                        add1.innerHTML = "<strong>Vehicle</strong>" + "<br />"
-                                        + "Registration (plate) number: " + regoInput.value + "<br />"
-                                        + "Make: " + makeInput.value + "<br />"
-                                        + "Model: " + modelInput.value + "<br />"
-                                        + "Colour: " + colourInput.value + "<br />"
-                                        + "Owner (full name): " + ownerInput.value;
-                        add1.style.gridRow = "1 / 3";
-                        add1.style.border = "1px solid black";
-                        // make inputs to empty
-                        regoInput.value = "";
-                        makeInput.value = "";
-                        modelInput.value = "";
-                        colourInput.value = "";
-                        ownerInput.value = "";
-                        // update "last added" box
-                        lastAddedBox.style.display = "block";
-                        lastAddedInfo.appendChild(add1);
+                        const promise = addVehicle(regoInput.value, makeInput.value, modelInput.value, colourInput.value, ownerID);
+                        promise.then((data) => {
+                            errorMessage.innerHTML = "Vehicle added successfully - feel free to add another new vehicle or refresh the page now";
+                            errorMessage.style.color = "green";
+                            // add last added box
+                            const add1 = document.createElement("div");
+                            add1.innerHTML = "<strong>Vehicle</strong>" + "<br />"
+                                            + "Registration (plate) number: " + regoInput.value + "<br />"
+                                            + "Make: " + makeInput.value + "<br />"
+                                            + "Model: " + modelInput.value + "<br />"
+                                            + "Colour: " + colourInput.value + "<br />"
+                                            + "Owner (full name): " + ownerInput.value;
+                            add1.style.gridRow = "1 / 3";
+                            add1.style.border = "1px solid black";
+                            // make inputs to empty
+                            regoInput.value = "";
+                            makeInput.value = "";
+                            modelInput.value = "";
+                            colourInput.value = "";
+                            ownerInput.value = "";
+                            // update "last added" box
+                            lastAddedBox.style.display = "block";
+                            lastAddedInfo.appendChild(add1);
+                        });
                     }
                 })
             }
