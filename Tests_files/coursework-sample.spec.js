@@ -4,7 +4,7 @@ import exp from 'constants';
 const { test, expect} = require('@playwright/test');
 
 // change this to the URL of your website, could be local or GitHub pages
-const websiteURL = "http://127.0.0.1:5500/HTML_CSS_JS_files/people_search.html";
+const websiteURL = "http://127.0.0.1:5500/HTML_CSS_JS_files/people-search.html";
 // NOTE: this will direct to my people_search page
 
 // Go to the website home page before each test.
