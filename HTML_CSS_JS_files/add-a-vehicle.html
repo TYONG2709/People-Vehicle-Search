@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Add a vehicle</title>
+        <link rel="stylesheet" href="page_view.css">
+    </head>
+    <script src="add_a_vehicle.js" type="module"></script>
+    <body id="container">
+        <header id="header">
+            <h1>Add a Vehicle</h1>
+            <menu id="menu">
+                <ul>
+                    <a href="home_page.html" class="current"><li>Home</li></a>
+                    <a href="people_search.html"><li>People search</li></a>
+                    <a href="vehicle_search.html"><li>Vehicle search</li></a>
+                    <a href="add_a_vehicle.html"><li>Add a vehicle</li></a>
+                </ul>
+            </menu>
+            <a href="home_page.html">
+                <image id="power_search" src="/Images/PowerSearch.png" alt="Power Search png"></image></a>
+        </header>
+        <main id="mainContent_AddingVehicle"> <!-- add a vehicle page main content -->
+            <div id="vehicles_info">
+                <p style="text-align: center; font-size: 15px;"><strong><u>Enter the details below to add a vehicle</u></strong></p>
+                <p id="details">Vehicle's <strong>Registration (plate) number:</strong>
+                    <input type="text" id="rego" placeholder="eg. EFG45HI">
+                    <em id="error_rego" style="display: none; color: red;">!</em></p>
+                <p id="details">Vehicle's <strong>Make:</strong>
+                    <input type="text" id="make" placeholder="eg. Toyota">
+                    <em id="error_make" style="display: none; color: red;">!</em></p>
+                <p id="details">Vehicle's <strong>Model:</strong>
+                    <input type="text" id="model" placeholder="eg. Vellfire">
+                    <em id="error_model" style="display: none; color: red;">!</em></p>
+                <p id="details">Vehicle's <strong>Colour:</strong>
+                    <input type="text" id="colour" placeholder="eg. grey">
+                    <em id="error_colour" style="display: none; color: red;">!</em></p>
+                <p id="details">Vehicle's <strong>Owner (full name):</strong>
+                    <input type="text" id="owner" placeholder="eg. John Smith">
+                    <em id="error_owner" style="display: none; color: red;">!</em></p>
+                <p id="owner_status" style="display: block;"></p><br>
+                <!-- add text to #onwer_status - 
+                'Warning: Owner not added into the system, please add owner's details before proceed (blue)'-->
+                <div id="owners_info" style="display: none;"> <!-- change to inline-block -->
+                    <p style="text-align: center; font-size: 15px;"><strong><u>Enter details below to add owner</u></strong></p>
+                    <p id="details">Owner's <strong>ID:</strong>
+                        <input type="number" id="personid" placeholder="eg. 1 or 11">
+                        <em id="error_personid" style="display: none; color: red;">!</em></p>
+                    <p id="details">Owner's <strong>Name:</strong>
+                        <input type="text" id="name" placeholder="eg. John Smith">
+                        <em id="error_name" style="display: none; color: red;">!</em></p>
+                    <p id="details">Owner's <strong>Address:</strong>
+                        <input type="text" id="address" placeholder="eg. Wollaton">
+                        <em id="error_address" style="display: none; color: red;">!</em></p>
+                    <p id="details">Owner's <strong>DOB:</strong>
+                        <input type="text" id="dob" placeholder="eg. 2005-09-27">
+                        <em id="error_dob" style="display: none; color: red;">!</em></p>
+                    <p id="details">Owner's <strong>License number:</strong>
+                        <input type="text" id="license" placeholder="eg. AB123CD">
+                        <em id="error_license" style="display: none; color: red;">!</em></p>
+                    <p id="details">Owner's <strong>License expiring date:</strong>
+                        <input type="text" id="expire" placeholder="eg. 2024-04-25">
+                        <em id="error_expire" style="display: none; color: red;">!</em></p>
+                </div>
+                <p id="message" style="display: block;"></p><br>
+                <!-- add text to #message - 
+                'Vehicle added successfully' (Green), 'Error' (red) -->
+                <!-- error message - 'Empty input - please fill in details in required field' -->
+                <button id="added" type="button">Add vehicle</button>
+                <div id="last_add" style="display: none;">
+                    <p style="font-size: 13px;"><strong><u>Last added</u></strong></p>
+                    <div id="added_info"></div>
+                </div>
+            </div>
+        </main>
+        <aside id="sidebar"> <!-- add a vehicle page sidebar -->
+            <p>You are currently in:</p>
+            <image id="sidebar_image" src="/Images/AddVehicle.png" alt="Add a vehicle png"></image>
+            <p style="text-align: center;"><u>Add a Vehicle page</u></p>
+        </aside>
+        <footer>
+            <div> <!-- disclaimer: all the links here will link to my personal account -->
+                <div><a href="https://www.facebook.com/ong.ty.3956/">
+                    <image src="/Images/facebookIcon.png" alt="facebook" height="20px"></image></a></div>
+                <div><a href="https://www.instagram.com/tengyi_2709/">
+                    <image src="/Images/instagramIcon.png" alt="instagram" height="20px"></image></a></div>
+                <div><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&pp=ygUXbmV2ZXIgZ29ubmEgZ2l2ZSB5b3UgdXA%3D">
+                    <image src="/Images/youtubeIcon.png" alt="youtube" height="20px"></image></a></div>
+                <div><a href="https://twitter.com/tyong2709">
+                    <image src="/Images/twitterIcon.png" alt="twitter" height="20px"></image></a></div>
+            </div>
+            <p>Copyright @ 2024 tyong2709@gmail.com</p>
+            <p>Publisher: Teng Ong</p>
+        </footer>
+    </body>
+</html>
