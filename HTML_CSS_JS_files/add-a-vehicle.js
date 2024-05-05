@@ -121,28 +121,33 @@ document.addEventListener("DOMContentLoaded", () => {
      * @returns error - to determine whether there exists an error input
      */
     function errorVehicleInputChecker(){
-        const error = false; // check whether there is any error input (will change to true if yes)
+        const error = [false]; // check whether there is any error input (will change to true if yes)
         if(regoInput.value === ''){
             errorRego.style.display = "inline-block";
-            error = true;
+            error.pop();
+            error.push(true);
         }
-        else if(makeInput.value === ''){
+        if(makeInput.value === ''){
             errorMake.style.display = "inline-block";
-            error = true;
+            error.pop();
+            error.push(true);
         }
-        else if(modelInput.value === ''){
+        if(modelInput.value === ''){
             errorModel.style.display = "inline-block";
-            error = true;
+            error.pop();
+            error.push(true);
         }
-        else if(colourInput.value === ''){
+        if(colourInput.value === ''){
             errorColour.style.display = "inline-block";
-            error = true;
+            error.pop();
+            error.push(true);
         }
-        else if(ownerInput.value === ''){
+        if(ownerInput.value === ''){
             errorOwner.style.display = "inline-block";
-            error = true;
+            error.pop();
+            error.push(true);
         }
-        return error;
+        return error[0];
     }
 
     /**
@@ -150,32 +155,38 @@ document.addEventListener("DOMContentLoaded", () => {
      * @returns error - to determine whether there exists an error input
      */
     function errorOwnerInputChecker(){
-        const error = false
+        const error = [false];
         if(personidInput.value === ''){
             errorPersonid.style.display = "inline-block";
-            error = true;
+            error.pop();
+            error.push(true);
         }
-        else if(nameInput.value === ''){
+        if(nameInput.value === ''){
             errorName.style.display = "inline-block";
-            error = true;
+            error.pop();
+            error.push(true);
         }
-        else if(addressInput.value === ''){
+        if(addressInput.value === ''){
             errorAddress.style.display = "inline-block";
-            error = true;
+            error.pop();
+            error.push(true);
         }
-        else if(dobInput.value === ''){
+        if(dobInput.value === ''){
             errorDOB.style.display = "inline-block";
-            error = true;
+            error.pop();
+            error.push(true);
         }
-        else if(licenseInput.value === ''){
+        if(licenseInput.value === ''){
             errorLicense.style.display = "inline-block";
-            error = true;
+            error.pop();
+            error.push(true);
         }
-        else if(expireInput.value === ''){
+        if(expireInput.value === ''){
             errorExpire.style.display = "inline-block";
-            error = true;
+            error.pop();
+            error.push(true);
         }
-        return error;
+        return error[0];
     }
 
     // add button click - event fires only when Add button got clicked
@@ -275,6 +286,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         ownerStatus.style.color = "blue";
                         ownersInfo.style.display = "inline-block";
                         addButton.innerHTML = "Add owner";
+                        nameInput.value = ownerInput.value;
                         // initialise variables below like there is no error
                         errorPersonid.style.display = "none";
                         errorName.style.display = "none";
@@ -285,7 +297,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
                     else{ // if owner exist in table
                         ownerStatus.style.innerHTML = "";
-                        const ownerID = Number.parseInt(data.PersonID);
+                        const ownerID = Number.parseInt(data[0].PersonID);
                         const promise = addVehicle(regoInput.value, makeInput.value, modelInput.value, colourInput.value, ownerID);
                         promise.then((data) => {
                             errorMessage.innerHTML = "Vehicle added successfully - feel free to add another new vehicle or refresh the page now";
@@ -308,6 +320,7 @@ document.addEventListener("DOMContentLoaded", () => {
                             ownerInput.value = "";
                             // update "last added" box
                             lastAddedBox.style.display = "block";
+                            lastAddedInfo.innerHTML = "";
                             lastAddedInfo.appendChild(add1);
                         });
                     }

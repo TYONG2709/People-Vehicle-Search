@@ -3,9 +3,8 @@ import exp from 'constants';
 // @ts-check
 const { test, expect} = require('@playwright/test');
 
-// change this to the URL of your website, could be local or GitHub pages
+// change this to the URL of your website, could be local or GitHub pages - NOTE: this will direct to my people_search page
 const websiteURL = "http://127.0.0.1:5500/HTML_CSS_JS_files/people-search.html";
-// NOTE: this will direct to my people_search page
 
 // Go to the website home page before each test.
 test.beforeEach(async ({ page }) => {
