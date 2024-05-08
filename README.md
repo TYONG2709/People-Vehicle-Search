@@ -25,8 +25,9 @@
 | --------------- | ----- |
 | **HTML** | <ul><li>[People Search page](/HTML_CSS_JS_files/people-search.html)</li><li>[Vehical Search page](/HTML_CSS_JS_files/vehicle-search.html)</li><li>[Add a Vehicle page](/HTML_CSS_JS_files/add-a-vehicle.html)</li></ul> |
 | **CSS** | [Page View (all pages should have the same css)](/HTML_CSS_JS_files/page-view.css) |
-| **JavaScript** | **Module files** <ul><li>[People Search js](/HTML_CSS_JS_files/people-search.js)</li><li>[Vehicle Search js](/HTML_CSS_JS_files/vehicle-search.js)</li><li>[Add a Vehicle js](/HTML_CSS_JS_files/add-a-vehicle.js)</li></ul> **Test Files (testing with Playwright)** <ul><li>[CW Requirements test spec (the sample file)](/Tests_files/coursework-sample.spec.js)</li><li>[Additional Requirements test spec (created by me)](/Tests_files/additional-tests.spec.js)</li></ul> |
+
 ### Back End
-| Database | Files |
-| -------- | --------------- |
-| <image src="Images/supabase.png" alt="Supabase logo" height="35" />  <br> **(online <em>PostgreSQL</em> database)** | [Original files to be added to Supabase](/Original_Database) |
+| Implementations | Files |
+| --------------- | ----- |
+| **JavaScript** | **Module files** <ul><li>[People Search js](/HTML_CSS_JS_files/people-search.js)</li><li>[Vehicle Search js](/HTML_CSS_JS_files/vehicle-search.js)</li><li>[Add a Vehicle js](/HTML_CSS_JS_files/add-a-vehicle.js)</li></ul> **Test Files (testing with Playwright)** <ul><li>[CW Requirements test spec (the sample file)](/Tests_files/coursework-sample.spec.js)</li><li>[Additional Requirements test spec (created by me)](/Tests_files/additional-tests.spec.js)</li></ul> <br /> <strong>Note: Please run the sample test file first before running the additional test file. If some of the test failed, run it individually and it will pass.</strong> |
+| <image src="Images/supabase.png" alt="Supabase logo" height="35" />  <br> **(online <em>PostgreSQL</em> database)** | <ul><li>[Original files to be added to Supabase](/Original_Database)</li><li>[Document about how I setup the database]()</li></ul> |
