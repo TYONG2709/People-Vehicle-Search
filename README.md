@@ -24,10 +24,10 @@
 | Implementations | Files |
 | --------------- | ----- |
 | **HTML** | <ul><li>[People Search page](/HTML_CSS_JS_files/people-search.html)</li><li>[Vehical Search page](/HTML_CSS_JS_files/vehicle-search.html)</li><li>[Add a Vehicle page](/HTML_CSS_JS_files/add-a-vehicle.html)</li></ul> |
-| **CSS** | [Page View (all pages should have the same css)](/HTML_CSS_JS_files/page-view.css) |
+| **CSS** | [Page View (all pages should have the same css)](/HTML_CSS_JS_files/page-view.css) <br /> **Note: there is a media queries in css file for the page with pagewidth less than 500px (from line number 263 to 524)** |
 
 ### Back End
 | Implementations | Files |
 | --------------- | ----- |
 | **JavaScript** | **Module files** <ul><li>[People Search js](/HTML_CSS_JS_files/people-search.js)</li><li>[Vehicle Search js](/HTML_CSS_JS_files/vehicle-search.js)</li><li>[Add a Vehicle js](/HTML_CSS_JS_files/add-a-vehicle.js)</li></ul> **Test Files (testing with Playwright)** <ul><li>[CW Requirements test spec (the sample file)](/Tests_files/coursework-sample.spec.js)</li><li>[Additional Requirements test spec (created by me)](/Tests_files/additional-tests.spec.js)</li> - [Document to briefly explain the additional tests I created](/docs/additonal_tests.md)</ul> <br /> <strong>Note: Please run the sample test file first before running the additional test file. If some of the test failed, run it individually and it will pass. Run it with PlayWright test.</strong> |
-| <image src="Images/supabase.png" alt="Supabase logo" height="35" />  <br> **(online <em>PostgreSQL</em> database)** | **Original files to be added to Supabase:**<ul><li>[People file](/Original_Database/People.csv)</li><li>[Vehicles file](/Original_Database/Vehicles.csv)</li><li>[Original database](/Original_Database/coursework.db)</li> - [Document about how I setup the database](/docs/adding_database.md)</ul> |
+| <image src="Images/supabase.png" alt="Supabase logo" height="35" />  | **Online <em>PostgreSQL</em> database**<br />[Document about how I setup the database](/docs/adding_database.md) |
