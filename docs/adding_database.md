@@ -1,5 +1,5 @@
 ## Adding database into supabase
-Supabase have a more efficient way to add data into the database by importing the csv files into it's respective table (click this to view csv files - [database](/Original_Database)). But before that, we have to create tables with correct attributes first.
+Supabase have a more efficient way to add data into the database by importing the csv files into it's respective table (People & Vehicles). But before that, we have to create tables with correct attributes first.
 
 ### Details on my supabase
 | | |
