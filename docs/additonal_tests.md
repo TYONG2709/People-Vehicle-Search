@@ -1,5 +1,5 @@
 ### Additonal tests created
-test file: [additional-tests.spec.js](/Tests_files/additional-tests.spec.js)
+test file: [additional-tests.spec.js](/tests-files/additional-tests.spec.js)
 
 #### HTML
 1. <strong>files - at least three html pages created</strong>

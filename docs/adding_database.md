@@ -1,12 +1,6 @@
 ## Adding database into supabase
 Supabase have a more efficient way to add data into the database by importing the csv files into it's respective table (People & Vehicles). But before that, we have to create tables with correct attributes first.
 
-### Details on my supabase
-| | |
-| - | - |
-|Project URL: | https://ucvynbtjdkujbfjkspox.supabase.co |
-|Project Name: | COMP1004 Coursework |
-|API key: | eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVjdnluYnRqZGt1amJmamtzcG94Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcxMjE3MTg5OSwiZXhwIjoyMDI3NzQ3ODk5fQ.kMMVLH8ZkGTE9KRSWjjL73AnRd4yovbcb91ynyONEgA |
 #### People table
 In order to add this into supabase:
 ```
