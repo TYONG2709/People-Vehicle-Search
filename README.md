@@ -4,7 +4,7 @@ This is a small project to showcase my ability to create a simple website that a
 ### Short brief about the website
 *This webpage to allow user (in this case probably road transport officer) to have a fast search of the people and respective vehicle. This front end page is connected to database with all the information of `People` and `Vehicles`.*
 
-> [!TIP] Future plan:
+> Future plan:
 > - design a better UI
 > - use a more easy, nicer framework
 > - be aware on security concerns, such as possible SQL injection attack on search bar
