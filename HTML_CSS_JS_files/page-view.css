@@ -34,7 +34,8 @@ header h1{
 }
 /* menu bar for all pages */
 menu{
-    display: block;
+    display: flex;
+    justify-content: center;
 }
 /* flex style for menu bar for all pages */
 menu ul{
