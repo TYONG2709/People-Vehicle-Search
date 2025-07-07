@@ -1,0 +1,14 @@
+{
+  "name": "people-search",
+  "version": "1.0.0",
+  "description": "| Contents | Sub-Contents |\r | -------- | ------------ |\r | **1. [Introducing the Power Search](#introducing-the-power-search)** | <ul><li>[About Power Search](#about-power-search)</li><li>[Power Search Webpage](#power-search-webpage-click-the-link-below)</li></ul> |\r | **2. [Details](#details)** | |\r | **3. [Addtional Work](#additional-work)** | <ul><li>[Frond end](#front-end)</li><li>[Back End](#back-end)</li></ul> |",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.43.1",
+    "@types/node": "^20.12.7"
+  }
+}

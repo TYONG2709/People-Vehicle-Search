@@ -1,23 +1,13 @@
-# Power Search
-| Contents | Sub-Contents |
-| -------- | ------------ |
-| **1. [Introducing the Power Search](#introducing-the-power-search)** | <ul><li>[About Power Search](#about-power-search)</li><li>[Power Search Webpage](#power-search-webpage-click-the-link-below)</li></ul> |
-| **2. [Details](#details)** | |
-| **3. [Working Files](#working-files)** | <ul><li>[Frond end](#front-end)</li><li>[Back End](#back-end)</li></ul> |
+# Introducing the Searching System 
+This is a small project to showcase my ability to create a simple website that able to connect the search with database stored in **Supabase**.
 
-## Introducing the Searching System - Power Search
-### About Power Search
-*Power Search is a webpage to allow user (in this case probably road transport officer) to have a fast search of the people and respective vehicle. This front end page is connected to database with all the information of `People` and `Vehicles`.*
-### Power Search Webpage (click the link below!)
-**[Power Search](/HTML_CSS_JS_files/people-search.html)**
+### Short brief about the website
+*This webpage to allow user (in this case probably road transport officer) to have a fast search of the people and respective vehicle. This front end page is connected to database with all the information of `People` and `Vehicles`.*
 
-## Details
-| | |
-| --------- | -------- |
-| **Name:** | Teng Ong |
-| **Student ID:** | 20525995 |
-| **Student username:** | psyto2 |
-| **Personal Email:** | tyong2709@gmail.com |
+> [!TIP] Future plan:
+> - design a better UI
+> - use a more easy, nicer framework
+> - be aware on security concerns, such as possible SQL injection attack on search bar
 
 ## Working Files
 ### Front End 
@@ -29,5 +19,5 @@
 ### Back End
 | Implementations | Files |
 | --------------- | ----- |
-| **JavaScript** | **Module files** <ul><li>[People Search js](/HTML_CSS_JS_files/people-search.js)</li><li>[Vehicle Search js](/HTML_CSS_JS_files/vehicle-search.js)</li><li>[Add a Vehicle js](/HTML_CSS_JS_files/add-a-vehicle.js)</li></ul> **Test Files (testing with Playwright)** <ul><li>[CW Requirements test spec (the sample file)](/Tests_files/coursework-sample.spec.js)</li><li>[Additional Requirements test spec (created by me)](/Tests_files/additional-tests.spec.js)</li> - [Document to briefly explain the additional tests I created](/docs/additonal_tests.md)</ul> <br /> <strong>Note: Please run the sample test file first before running the additional test file. If some of the test failed, run it individually and it will pass. Run it with PlayWright test.</strong> |
+| **JavaScript** | **Module files** <ul><li>[People Search js](/HTML_CSS_JS_files/people-search.js)</li><li>[Vehicle Search js](/HTML_CSS_JS_files/vehicle-search.js)</li><li>[Add a Vehicle js](/HTML_CSS_JS_files/add-a-vehicle.js)</li></ul> **Test File (testing with Playwright)** <ul><li>[Simple People Search test](/tests-files/simple-search-test.spec.js)</li><li>[Other tests](/tests-files/additional-tests.spec.js)</li></ul> <br /> <strong>Note: Please run the sample test file first before running the additional test file. If some of the test failed, run it individually and it will pass. Run it with PlayWright test.</strong> |
 | <image src="Images/supabase.png" alt="Supabase logo" height="35" />  | **Online <em>PostgreSQL</em> database**<br />[Document about how I setup the database](/docs/adding_database.md) |

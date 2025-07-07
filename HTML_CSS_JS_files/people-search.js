@@ -2,9 +2,7 @@
 import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
 
 // connect my supabase
-const supabase = createClient('https://ucvynbtjdkujbfjkspox.supabase.co',
-                    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVjdnluYnRqZGt1amJmamtzcG94Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcxMjE3MTg5OSwiZXhwIjoyMDI3NzQ3ODk5fQ.kMMVLH8ZkGTE9KRSWjjL73AnRd4yovbcb91ynyONEgA');
-                    
+const supabase = createClient(vars.SUPABASE_CLIENT_ADDRESS, vars.SUPABASE_CLIENT_KEY);         
 /**
  * function fetchData - fetch data from table 'People'
  * @param {*} nameORlicense either "Name" or "LicenseNumber"
