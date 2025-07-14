@@ -1,27 +1,14 @@
-// initializing
-import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
-
-// connect my supabase
-const supabase = createClient(vars.SUPABASE_CLIENT_ADDRESS, vars.SUPABASE_CLIENT_KEY);         
+      
 /**
  * function fetchData - fetch data from table 'People'
  * @param {*} nameORlicense either "Name" or "LicenseNumber"
  * @param {*} input by user
  * @returns data - a promise object (USE .then() to access inner data)
  */
-export async function fetchData(nameORlicense, input){
-    if(nameORlicense === "Name"){
-        const { data } = await supabase.from('People')
-                                    .select().ilike(nameORlicense, input);
-        console.log(data);
-        return data;
-    }
-    else{
-        const { data } = await supabase.from('People')
-                                    .select().eq(nameORlicense, input);
-        console.log(data);
-        return data;
-    }
+export async function fetchData(field, input) {
+  const response = await fetch(`http://localhost:3001/api/people?field=${field}&value=${encodeURIComponent(input)}`);
+  const data = await response.json();
+  return data;
 }
 
 // DOMContentLoaded - event fires only after the html doc has completely loaded / parsed and DOM tree is built
