@@ -1,20 +1,16 @@
-// initializing
-import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
 
-// connect my supabase
-const supabase = createClient(vars.SUPABASE_CLIENT_ADDRESS, vars.SUPABASE_CLIENT_KEY);
 
 /**
  * function fetchDataOwner - fetch PersonID from table 'People'
- * @param {*} name by user
+ * @param {*} ownerName by user
  * @returns data - a promise object (USE .then() to access the data)
  */
-export async function fetchDataOwner(name){
-    const { data } = await supabase.from('People')
-                                .select('PersonID').eq('Name', name);
-    console.log(data);
-    return data;
+export async function fetchDataOwner(ownerName) {
+  const response = await fetch(`https://people-vehicle-search.onrender.com/api/people?field=Name&value=${encodeURIComponent(ownerName)}`);
+  const data = await response.json();
+  return data;
 }
+
 
 /**
  * function addVehicle - to add vehicle details into 'Vehicle' table
@@ -24,16 +20,15 @@ export async function fetchDataOwner(name){
  * @param {*} colour vehicle colour in String
  * @param {*} ownerID vehicle owner ID as Integer (need to get with function fetchDataOwner)
  */
-export async function addVehicle(rego, make, model, colour, ownerID){
-    const { data, error } = await supabase.from('Vehicles')
-                                .insert({ VehicleID: rego, 
-                                            Make: make,
-                                            Model: model,
-                                            Colour: colour,
-                                            OwnerID: ownerID })
-                                .select();
-    console.log(data);
-    return data;
+export async function addVehicle(rego, make, model, colour, ownerID) {
+  const response = await fetch('https://people-vehicle-search.onrender.com/api/addVehicle', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ rego, make, model, colour, ownerID })
+  });
+
+  const data = await response.json();
+  return data;
 }
 
 /**
@@ -51,20 +46,17 @@ export async function addVehicle(rego, make, model, colour, ownerID){
  * @param {*} colour vehicle colour in String
  * @param {*} ownerID vehicle owner ID as Integer (need to get with function fetchDataOwner)
  */
-export async function addOwner(personid, name, address, dob, license, expire, rego, make, model, colour, ownerID){
-    const { data, error } = await supabase.from('People')
-                                .insert({ PersonID: personid,
-                                            Name: name,
-                                            Address: address,
-                                            DOB: dob,
-                                            LicenseNumber: license,
-                                            ExpiryDate: expire })
-                                .select();
-    console.log(data);
-    // add vehicle automatically afterwards
-    addVehicle(rego, make, model, colour, ownerID);
-    return data;
+export async function addOwner(personid, name, address, dob, license, expire) {
+  const response = await fetch('https://people-vehicle-search.onrender.com/api/addPeople', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ personid, name, address, dob, license, expire })
+  });
+
+  const data = await response.json();
+  return data;
 }
+
 
 // DOMContentLoaded - event fires only after the html doc has completely loaded / parsed and DOM tree is built
 document.addEventListener("DOMContentLoaded", () => {

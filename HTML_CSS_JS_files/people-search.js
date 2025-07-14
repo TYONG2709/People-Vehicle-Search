@@ -6,7 +6,7 @@
  * @returns data - a promise object (USE .then() to access inner data)
  */
 export async function fetchData(field, input) {
-  const response = await fetch(`http://localhost:3001/api/people?field=${field}&value=${encodeURIComponent(input)}`);
+  const response = await fetch(`https://people-vehicle-search.onrender.com?field=${field}&value=${encodeURIComponent(input)}`);
   const data = await response.json();
   return data;
 }
