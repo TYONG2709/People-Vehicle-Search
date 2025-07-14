@@ -1,19 +1,18 @@
 // backend/server.js
 const express = require('express');
-import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm";
 const cors = require('cors');
+const { createClient } = require('@supabase/supabase-js');
 require('dotenv').config();
 
 const app = express();
 app.use(cors());
+app.use(express.json());
 
-// Create supabase client with service role
 const supabase = createClient(
-    process.env.SUPABASE_URL,
-    process.env.SUPABASE_SERVICE_ROLE_KEY
-)
+  process.env.SUPABASE_URL,
+  process.env.SUPABASE_SERVICE_ROLE_KEY
+);
 
-// Generic search endpoint
 app.get('/api/people', async (req, res) => {
   const { field, value } = req.query;
 
@@ -31,9 +30,8 @@ app.get('/api/people', async (req, res) => {
   }
 
   const { data, error } = await query;
-
   if (error) return res.status(500).json({ error: error.message });
-  return res.json(data);
+  res.json(data);
 });
 
 const PORT = process.env.PORT || 3001;
